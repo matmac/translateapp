@@ -17,7 +17,7 @@ const Field = ({onValueChange}) => {
           onValueChange(textInput)
         }}
         textAlignVertical='top'
-        style={tw`border border-slate-200 rounded-md h-auto max-h-30 p-3`}
+        style={tw`relative z-50 border border-slate-200 rounded-md h-auto max-h-30 p-3`}
       />
     </View>
   );
