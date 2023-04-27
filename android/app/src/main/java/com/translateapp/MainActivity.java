@@ -1,5 +1,7 @@
 package com.translateapp;
 
+import android.os.Bundle;
+
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
@@ -15,6 +17,13 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "translateapp";
   }
+  
+  /* React Navigation */
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
+  /* EOF React Navigation */
 
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. Here we use a util class {@link
