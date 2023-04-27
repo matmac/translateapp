@@ -5,22 +5,27 @@
  * @format
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import tw from 'twrnc';
+import type {Node} from 'react';
 import {
   Alert,
   Pressable,
-  SafeAreaView, // Sólo IOS
+  SafeAreaView,
   Text,
   View,
 } from 'react-native';
 
-function App(): JSX.Element {
+import LanguageSelector from './components/LanguageSelector';
+
+const App: () => Node = () => {
+  const [language, setLanguage] = useState('es')
   const profileToast = () => {
     Alert.alert('Hola Mundo', 'Estamos en la tierra.', [{text: 'Cancelar', style: 'cancel'}, {text: 'Ok', onPress: () => console.log('Vale!')}]);
   };
   return (
     <SafeAreaView style={tw`flex flex-1`}>
+      {/* cabecera */}
       <View style={tw`px-8 py-4 flex flex-row items-center justify-between`}>
         <Text style={tw`text-2xl`}>Translate App</Text>
         <Pressable
@@ -30,6 +35,8 @@ function App(): JSX.Element {
           <Text style={tw`text-slate-800 text-lg font-bold`}>MB</Text>
         </Pressable>
       </View>
+      {/*Language Selector*/}
+      <LanguageSelector language={language} setLanguage={setLanguage} />
     </SafeAreaView>
   );
 }
