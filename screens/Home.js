@@ -28,7 +28,7 @@ const Home = ({navigation}) => {
   };
   return (
     <KeyboardAvoidingView style={tw`flex-1`}>
-      <ScrollView style={tw`flex-grow`}>
+      <ScrollView style={tw`flex-grow bg-white`}>
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
           <SafeAreaView style={tw`flex flex-1`}>
             {/* cabecera */}
@@ -44,9 +44,6 @@ const Home = ({navigation}) => {
               </Pressable>
             </View>
             {/*Language Selector*/}
-            <Button
-              title='Go to details' onPress={() => navigation.navigate('Details')}
-            />
             <LanguageSelector language={language} setLanguage={setLanguage} />
             <Field onValueChange={setText} />
             <Translate text={text} language={language} />
